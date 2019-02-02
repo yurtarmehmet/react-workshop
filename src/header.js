@@ -13,12 +13,18 @@ class Header extends Component {
     }
 
     render() {
+        console.log(this.props.filterNew);
         return (
             <div style={{padding: "30px"}}>
                 <input type="text" onChange={this.props.onSearchChange} ref="searchInput" />
-                <button onClick={this.removeFilters}>All</button>
-                <button onClick={this.props.filterByNew}>Filter New</button>
-                <button>Filter Discounted</button>
+                <button onClick={this.removeFilters} style={{
+                    "backgroundColor": !this.props.isFiltered ? "green" : "#fff",
+                    "color": !this.props.isFiltered ? "#fff" : "#000"
+                }}>All</button>
+                <button onClick={this.props.filterByNew} style={{
+                    "backgroundColor": this.props.filterNew ? "green" : "#fff",
+                    "color": this.props.filterNew ? "#fff" : "#000"
+                }}>Filter New</button>
             </div>
         );
     }

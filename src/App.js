@@ -9,7 +9,8 @@ class App extends Component {
 
     this.state = {
       searchTerm: "",
-      filterNew: false
+      filterNew: false,
+      isFiltered: false
     };
 
     this.changeSearchTerm = this.changeSearchTerm.bind(this);
@@ -20,27 +21,30 @@ class App extends Component {
   changeSearchTerm(e){
       let newValue= e.target.value;
       this.setState({
-          searchTerm: newValue
+          searchTerm: newValue,
+          isFiltered: !newValue.length ? this.state.filterNew : true
       });
   }
 
   filterByNew(){
     this.setState({
-        filterNew: true
+        filterNew: true,
+        isFiltered: true
     })
   }
 
   removeFilters(){
     this.setState({
         filterNew: false,
-        searchTerm: ""
+        searchTerm: "",
+        isFiltered: false
     });
   }
 
   render() {
     return (
       <div className="App">
-        <Header onSearchChange={this.changeSearchTerm} filterByNew={this.filterByNew} removeFilters={this.removeFilters}/>
+        <Header onSearchChange={this.changeSearchTerm} filterByNew={this.filterByNew} filterNew={this.state.filterNew} isFiltered={this.state.isFiltered} removeFilters={this.removeFilters}/>
         <ProductList searchTerm={this.state.searchTerm} filterNew={this.state.filterNew} />
       </div>
     );
