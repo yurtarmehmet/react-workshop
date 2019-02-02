@@ -7,8 +7,8 @@ class Header extends Component {
 
     render() {
         return (
-            <div>
-                Header
+            <div style={{padding: "30px"}}>
+                <input type="text" onChange={this.props.onSearchChange}/>
             </div>
         );
     }
