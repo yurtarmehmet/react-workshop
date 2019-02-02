@@ -1,0 +1,306 @@
+/* Global Styles */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  background: #F5F5F5;
+  font-family: 'Titillium Web', sans-serif;
+}
+.navigation {
+  float: left;
+  width: 100%;
+}
+.navigation a {
+  float: right;
+  color: #fff;
+  text-decoration: none;
+  padding: 4px 15px;
+  margin: 10px;
+  border-radius: 3px;
+  background: #7db9e8;
+  background: -moz-linear-gradient(top,  #7db9e8 0%, #1e5799 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7db9e8), color-stop(100%,#1e5799));
+  background: -webkit-linear-gradient(top,  #7db9e8 0%,#1e5799 100%);
+  background: -o-linear-gradient(top,  #7db9e8 0%,#1e5799 100%);
+  background: -ms-linear-gradient(top,  #7db9e8 0%,#1e5799 100%);
+  background: linear-gradient(to bottom,  #7db9e8 0%,#1e5799 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 );
+}
+.navigation a:hover {
+  background: #1e5799;
+  background: -moz-linear-gradient(top,  #1e5799 0%, #7db9e8 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5799), color-stop(100%,#7db9e8));
+  background: -webkit-linear-gradient(top,  #1e5799 0%,#7db9e8 100%);
+  background: -o-linear-gradient(top,  #1e5799 0%,#7db9e8 100%);
+  background: -ms-linear-gradient(top,  #1e5799 0%,#7db9e8 100%);
+  background: linear-gradient(to bottom,  #1e5799 0%,#7db9e8 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 );
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+ul.product_list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.product_grid a {
+  text-decoration: none;
+}
+.product_item {
+  display: inline-block;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.product_sale {
+  position: absolute;
+  z-index: 99;
+  right: -28px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.product_image {
+  position: relative;
+  overflow: hidden;
+}
+.product_image img {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+.product_image img:hover {
+  -o-transform: scale(1.2, 1.2);
+  -moz-transform: scale(1.2, 1.2);
+  -webkit-transform: scale(1.2, 1.2);
+  -ms-transform: scale(1.2, 1.2);
+  transform: scale(1.2, 1.2);
+}
+.product_title {
+  float: left;
+  width: 100%;
+  text-transform: uppercase;
+}
+.product_title h5 {
+  margin: auto;
+  font-size: 1.1em;
+  font-weight: 500;
+  line-height: 1;
+  padding-bottom: 5px;
+}
+.product_price a {
+  color: #000;
+}
+.price_old {
+  color: #ea2e49;
+  text-decoration: line-through;
+}
+.product_price span {
+  font-size: 1.1em;
+  line-height: 1;
+}
+.product_desc p {
+  margin: 0;
+  line-height: 1.3;
+  padding: 10px 0;
+}
+.product_rating {
+  float: right;
+  width: 100px;
+  height: 20px;
+  overflow: hidden;
+  background: url(https://bit.ly/1B4PjyM) top left no-repeat;
+  background-position: 0 76%;
+}
+.product_buttons {
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+.product_buttons .product_heart:hover {
+  color: #DF0404;
+  background: rgba(255, 255, 255, 0.5);
+}
+.product_buttons .product_compare:hover {
+  color: rgb(18, 150, 18);
+  background: rgba(255, 255, 255, 0.5);
+}
+.product_buttons .add_to_cart:hover {
+  color: #4DC8D3;;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+  .product_sale p {
+    margin: 0;
+    color: #fff;
+    background: #ff0000;
+    padding: 3px 25px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.4);
+  }
+  .product_values {
+    float: left;
+    width: calc(100% - 100px);
+    padding: 0 10px;
+  }
+  .product_rating {
+    margin-right: 10px;
+  }
+  .product_image {
+    height: 150px;
+    float: left;
+    width: 100px;
+  }
+  .product_image .product_buttons {
+    display: none;
+  }
+  .product_desc {
+    overflow: hidden;
+    float: left;
+    line-height: 1;
+  }
+  .product_values .product_buttons {
+    position: relative;
+    text-align: left;
+    float: left;
+    margin-top: 7px;
+  }
+  .product_values .product_buttons button {
+    color: #252525;
+    background: rgba(255, 255, 255, 1);
+    font-size: 1em;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #000;
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+  .product_image {
+    height: 250px;
+    width: 175px;
+  }
+  .product_values {
+    width: calc(100% - 175px);
+  }
+}
+
+@media only screen and (min-width: 678px) {
+  .product_item {
+    width: 49.5%;
+  }
+  .product_image {
+    height: 150px;
+    width: 100px;
+  }
+  .product_values {
+    width: calc(100% - 100px);
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+  .product_image {
+    height: 250px;
+    width: 175px;
+  }
+  .product_values {
+    width: calc(100% - 175px);
+  }
+  .product_desc {
+    max-height: 200px;
+  }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+  .product_item {
+    width: 33%;
+  }
+  .product_desc {
+    max-height: 131px;
+  }
+}
+
+
+
+/*==========  Non-Mobile First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+  .product_desc {
+    max-height: 67px;
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+  .product_title h5 {
+    font-weight: bold;
+  }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+  .product_sale {
+    display: none;
+  }
+  .product_image img {
+    position: relative;
+  }
+  .product_price span {
+    float: left;
+    width: 100%;
+  }
+  .product_desc {
+    display: none;
+  }
+  .product_buttons {
+    display: none;
+  }
+}
+
+.product_discount {
+  top: 70px;
+}
+
+.product_discount p {
+  background: green;
+  color: #ffffff;
+}
