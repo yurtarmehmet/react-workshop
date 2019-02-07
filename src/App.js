@@ -44,8 +44,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header onSearchChange={this.changeSearchTerm} filterByNew={this.filterByNew} filterNew={this.state.filterNew} isFiltered={this.state.isFiltered} removeFilters={this.removeFilters}/>
-        <ProductList searchTerm={this.state.searchTerm} filterNew={this.state.filterNew} />
+        <Header onSearchChange={this.changeSearchTerm} isFiltered={this.state.isFiltered} removeFilters={this.removeFilters}/>
+        <ProductList searchTerm={this.state.searchTerm} />
       </div>
     );
   }

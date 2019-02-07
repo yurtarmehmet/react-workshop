@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Product from "./product";
+import {connect} from "react-redux";
+import {onClickNewFilter} from "./actions/filterAction";
 
 class ProductList extends Component {
     constructor(props){
@@ -55,6 +57,7 @@ class ProductList extends Component {
     }
 
     render() {
+        console.log(this.props);
         return (
             <div className="product_grid">
                 <ul className="product_list list">
@@ -67,4 +70,11 @@ class ProductList extends Component {
     }
 }
 
-export default ProductList;
+const mapStateToProps = (state) => {
+    return {
+        filterNew: state.filter.filterByNew
+    }
+};
+
+
+export default connect(mapStateToProps, null)(ProductList);

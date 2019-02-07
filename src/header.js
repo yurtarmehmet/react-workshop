@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {connect} from "react-redux";
+import {onClickNewFilter} from "./actions/filterAction";
 
 class Header extends Component {
     constructor(props){
@@ -21,7 +23,7 @@ class Header extends Component {
                     "backgroundColor": !this.props.isFiltered ? "green" : "#fff",
                     "color": !this.props.isFiltered ? "#fff" : "#000"
                 }}>All</button>
-                <button onClick={this.props.filterByNew} style={{
+                <button onClick={this.props.onClickNewFilter} style={{
                     "backgroundColor": this.props.filterNew ? "green" : "#fff",
                     "color": this.props.filterNew ? "#fff" : "#000"
                 }}>Filter New</button>
@@ -30,4 +32,14 @@ class Header extends Component {
     }
 }
 
-export default Header;
+const mapStateToProps = (state) => {
+    return {
+        filterNew: state.filter.filterByNew
+    }
+};
+
+const mapDispatchToProps = {
+    onClickNewFilter : onClickNewFilter,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
