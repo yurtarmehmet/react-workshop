@@ -13,5 +13,3 @@ React Workshop Example
 * [React Redux Links](https://github.com/aneagoie/react-redux-links) 
 * [These React Fundamentals You Skip may be Killing You](https://medium.freecodecamp.org/these-react-fundamentals-you-skip-may-be-killing-you-7629fb87dd4a) 
 * [Getting Started with React – An Overview and Walkthrough](https://www.taniarascia.com/getting-started-with-react/) 
-* [React Redux Links](https://github.com/aneagoie/react-redux-links) 
-* [React Redux Links](https://github.com/aneagoie/react-redux-links) 
